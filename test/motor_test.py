@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C
+from time import sleep
+
+tank_pair = MoveTank(OUTPUT_B, OUTPUT_C)
+
+tank_pair.on(left_speed = 60, right_speed = 60)
+sleep(3)
+tank_pair.on(left_speed = 50, right_speed = 60)
+sleep(1)
+tank_pair.on(left_speed = 60, right_speed = 50)
+sleep(1)
+
+tank_pair.on(left_speed = 0, right_speed = 80)
+sleep(3)
+
+tank_pair.on(left_speed = 80, right_speed = 0)
+sleep(3)
+
+tank_pair.on(left_speed = 50, right_speed = 50)
+sleep(0.3)
+tank_pair.on(left_speed = 40, right_speed = 40)
+sleep(0.3)
+tank_pair.on(left_speed = 30, right_speed = 30)
+sleep(0.3)
+tank_pair.on(left_speed = 20, right_speed = 20)
+sleep(0.3)
+tank_pair.on(left_speed = 10, right_speed = 10)
+sleep(0.3)
+tank_pair(left_speed = 0, right_speed = 0)
+tank_pair.off
